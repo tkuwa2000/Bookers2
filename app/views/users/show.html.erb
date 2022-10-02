@@ -1,17 +1,11 @@
-<!-- ユーザーの詳細 -->
-<div>
-  <h3><%= @user.name %></h3>
-  <%= image_tag @user.get_profile_image(100,100) %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'info', user: @user %>
+      <%= render 'books/new', book: @book %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <%= render 'books/books_list', books: @books %>
+    </div>
+  </div>
 </div>
-
-<!-- ユーザーの投稿一覧 -->
-
-<% @books.each do |book| %>
-<div>
-  <%= link_to user_path(book.id) do %>
-    <%= image_tag book.user.get_profile_image(100,100) %>
-  <% end %>
-  <p>title：<%= book.title %></p>
-  <p>Opinion：<%= book.opinion %></p>
-</div>
-<% end %>

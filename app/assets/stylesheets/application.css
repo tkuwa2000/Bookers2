@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+ 
+ /*cssを使用する場合*/
+/** {*/
+/*  box-sizing: border-box;*/
+/*}*/
+
+/*body {*/
+/*  line-height: 1.5;*/
+/*}*/
+
+/*.table {*/
+/*  width: 100%;*/
+/*}*/
+
+/*table {*/
+/*  border-collapse: collapse;*/
+/*}*/
