@@ -28,7 +28,7 @@
               <%= link_to @book.title, book_path(@book.id) %>
             </td>
             <td>
-              <%= @book.opinion %>
+              <%= @book.body %>
             </td>
             <!--if文で、ユーザーかどうかの確認が必要-->
             <% if @book.user == current_user %>
