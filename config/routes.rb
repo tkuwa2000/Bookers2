@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'home/about', to: 'home#about', as: 'about'
   resources :books do
     resource :favorites, only: [:create, :destroy]
+    resources :book_comments, only: [:create, :destroy]
   end
   devise_for :users
   resources :users
