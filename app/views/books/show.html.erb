@@ -30,6 +30,25 @@
             <td>
               <%= @book.body %>
             </td>
+            <td>
+              <% if @book.favorited_by?(current_user) %>
+                <p>
+                  <%= link_to book_favorites_path(@book), method: :delete do %>
+                    <i class="fa-solid fa-heart text-danger">
+                      <%= @book.favorites.count %>
+                    </i>
+                  <% end %>
+                </p>
+                <% else %>
+                <p>
+                  <%= link_to book_favorites_path(@book), method: :post do %>
+                    <i class="fa-regular fa-heart">
+                      <%= @book.favorites.count %>
+                    </i>
+                  <% end %>
+                </p>
+              <% end %>
+            </td>
             <!--if文で、ユーザーかどうかの確認が必要-->
             <% if @book.user == current_user %>
               <td>
